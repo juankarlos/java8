@@ -115,7 +115,17 @@ public class LambdaComparator {
 		//listDevs.sort((Developer o1, Developer o2)->o1.getName().compareTo(o2.getName()));
 		
 		// Option 2
-		listDevs.sort((o1, o2)->o1.getSalary().compareTo(o2.getSalary()));		
+		listDevs.sort((o1, o2)->o1.getSalary().compareTo(o2.getSalary()));
+		
+		// Option 3
+		//Comparator<Developer> salaryComparator = (o1, o2)->o1.getSalary().compareTo(o2.getSalary());
+		//listDevs.sort(salaryComparator);
+		
+		printLambdaList(listDevs);
+		
+		System.out.println("\nAfter Sort by salary in reversed order: ");
+		Comparator<Developer> salaryComparator = (o1, o2)->o1.getSalary().compareTo(o2.getSalary());
+		listDevs.sort(salaryComparator.reversed());
 		printLambdaList(listDevs);
 	}
 
